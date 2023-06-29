@@ -36,12 +36,6 @@ public:
                         s.insert({nums[i], nums[j], nums[k], nums[l]});
                         k++;
                         l--;
-                        while(k<l && nums[k]==nums[k-1]){
-                            k++;
-                        }
-                        while(k<l && nums[l]==nums[l+1]){
-                            l--;
-                        }
                     }
                 }
             }
