@@ -9,8 +9,6 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// INTUTION - 
-// if right child is existing then left cchild should also exist for a complete binary tree, or else right child should also not exist
 
 class Solution {
 public:
