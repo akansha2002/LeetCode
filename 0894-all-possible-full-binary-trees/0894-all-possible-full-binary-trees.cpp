@@ -12,7 +12,8 @@
 class Solution {
 public:
     
-    vector<TreeNode*> solve(int n){
+    
+    vector<TreeNode*> allPossibleFBT(int n) {
         vector<TreeNode*> result;
 
         if(n == 1){
@@ -22,8 +23,8 @@ public:
         }
 
         for(int i=1; i<n; i+=2){
-            vector<TreeNode*> leftAllFBT = solve(i);
-            vector<TreeNode*> rightAllFBT = solve(n-i-1);
+            vector<TreeNode*> leftAllFBT = allPossibleFBT(i);
+            vector<TreeNode*> rightAllFBT = allPossibleFBT(n-i-1);
             for(auto &l: leftAllFBT){
                 for(auto &r: rightAllFBT){
                     TreeNode* root = new TreeNode(0);
@@ -34,8 +35,5 @@ public:
             }
         }
         return result;
-    }
-    vector<TreeNode*> allPossibleFBT(int n) {
-        return solve(n);
     }
 };
