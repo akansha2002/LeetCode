@@ -1,26 +1,17 @@
-// brute forc
-// tc- o(n2)
-
-// sorting
-// o(nlogn)
-
-// hashing
-// o(n)
-
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
-        
-        int n=nums.size();
-        int x=n/3;
-        vector<int>result;
         unordered_map<int, int>m;
-        for(int i=0;i<n;i++)
-        {
+        vector<int>ans;
+        int n = nums.size();
+        for(int i=0; i < nums.size(); i++){
             m[nums[i]]++;
-            if(m[nums[i]]==x+1) result.push_back(nums[i]);
         }
-        return result;
-        
+        for(auto it : m){
+            if(it.second > n/3){
+                ans.push_back(it.first);
+            }
+        }
+        return ans;
     }
 };
